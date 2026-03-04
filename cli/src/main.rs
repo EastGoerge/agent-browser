@@ -247,7 +247,7 @@ fn main() {
     // Ignore SIGPIPE to prevent panic when piping to head/tail
     #[cfg(unix)]
     unsafe {
-        libc::signal(libc::SIGPIPE, libc::SIG_DFL);
+        libc::signal(libc::SIGPIPE, libc::SIG_IGN);
     }
 
     // Prevent MSYS/Git Bash path translation from mangling arguments
