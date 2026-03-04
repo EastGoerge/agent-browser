@@ -841,6 +841,7 @@ fn main() {
                         eprintln!("[agent-browser] Action requires confirmation:");
                         eprintln!("  {}: {}", category, desc);
                         eprint!("  Allow? [y/N]: ");
+                        std::io::Write::flush(&mut std::io::stderr()).ok();
 
                         let mut input = String::new();
                         let approved = if std::io::IsTerminal::is_terminal(&std::io::stdin()) {
