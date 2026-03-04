@@ -348,7 +348,7 @@ fn main() {
             .unwrap_or(false)
         {
             let mut pass = String::new();
-            if std::io::stdin().read_line(&mut pass).is_err() || pass.is_empty() {
+            if std::io::stdin().read_line(&mut pass).is_err() {
                 eprintln!(
                     "{} Failed to read password from stdin",
                     color::error_indicator()
